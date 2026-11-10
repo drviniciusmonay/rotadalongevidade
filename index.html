@@ -5,21 +5,22 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>A Rota da Longevidade</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Guia prático para cães e gatos viverem mais e envelhecerem bem: peso, músculos, alimentação, movimento, dor, boca e cada fase da vida. Guia para celular, 13 fichas e planilha. Por Dr. Vinicius Monay, Médico Veterinário.">
+<meta name="description" content="Como fazer seu cão ou gato viver mais e envelhecer bem: peso, músculos, alimentação, movimento, dor, boca e cuidados em cada fase da vida. Guia para celular, 13 fichas e planilha. Por Dr. Vinicius Monay, Médico Veterinário.">
 <meta property="og:title" content="A Rota da Longevidade para Cães e Gatos">
-<meta property="og:description" content="O que fazer na rotina de hoje para seu cão ou gato viver mais e envelhecer bem. Guia + 13 fichas + planilha.">
+<meta property="og:description" content="Mais anos com seu pet. E anos bem vividos. Guia + 13 fichas + planilha, por Médico Veterinário.">
 <meta property="og:image" content="https://drviniciusmonay.github.io/rotadalongevidade/img/og.jpg">
 <meta property="og:type" content="product">
 <meta name="theme-color" content="#12301F">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap">
 <style>
-/* Layout: faixas de largura total que alternam verde-floresta (marca do guia) e creme claro;
-   conteúdo numa coluna de leitura de 1080px, que vira uma coluna só no celular. Visual único e claro, como o produto. */
+/* Layout: página de venda em faixas de largura total (verde-floresta da marca do guia alternando com creme),
+   coluna de leitura de 1080px; topo com headline grande e produto ao lado; vira uma coluna no celular.
+   Visual único e claro, igual ao produto. */
 :root{
   --forest:#12301F; --green:#1E4632; --gold:#C8893A; --gold-soft:#E7B06A;
-  --cream:#F5EFE3; --paper:#FFFDF8; --sand:#EADFCB; --ink:#22302A; --muted:#5E665F;
+  --cream:#F5EFE3; --paper:#FFFDF8; --ink:#22302A; --muted:#5E665F;
   --line:#E3D8C4; --ok:#E8F0E9; --warn:#FBE9E2; --warn-ink:#A0452A;
   --display:"Poppins",ui-sans-serif,system-ui,sans-serif;
   --text:"Inter",ui-sans-serif,system-ui,-apple-system,sans-serif;
@@ -33,43 +34,82 @@ a{color:inherit}
 img{display:block;max-width:100%;height:auto}
 .band{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:72px}
 .wrap{max-width:1080px;margin:0 auto}
-.narrow{max-width:720px}
+.narrow{max-width:740px}
+.center{text-align:center}
+.center .lead{margin-inline:auto}
 .eyebrow{font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
-.h2{font-size:clamp(28px,4.4vw,40px);line-height:1.15;color:var(--green);margin-top:10px}
+.h2{font-size:clamp(28px,4.4vw,42px);line-height:1.14;color:var(--green);margin-top:10px}
 .lead{font-size:19px;color:var(--muted);margin-top:16px;max-width:62ch}
-.stack{display:flex;flex-direction:column;gap:16px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--gold);color:#fff;font-family:var(--display);font-weight:600;font-size:18px;text-decoration:none;padding:17px 30px;border-radius:999px;box-shadow:0 8px 22px rgba(200,137,58,.35);transition:transform .15s ease,box-shadow .15s ease}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--gold);color:#fff;font-family:var(--display);font-weight:700;font-size:18px;text-decoration:none;padding:18px 32px;border-radius:999px;box-shadow:0 8px 22px rgba(200,137,58,.35);transition:transform .15s ease,box-shadow .15s ease;text-align:center}
 .btn:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(200,137,58,.45)}
 .btn:focus-visible,.q-opt:focus-visible,summary:focus-visible{outline:3px solid var(--gold-soft);outline-offset:3px}
-.btn svg{width:20px;height:20px}
-.trust{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:inherit;opacity:.85;margin-top:16px}
+.btn svg{width:20px;height:20px;flex:none}
+.trust{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;opacity:.88;margin-top:16px}
 .trust span{display:inline-flex;align-items:center;gap:6px}
 .trust svg{width:16px;height:16px;flex:none}
+.center .trust{justify-content:center}
+.midcta{margin-top:40px;display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center}
+.midcta small{font-size:14px;color:var(--muted);margin-top:10px}
+
+/* FAIXA DE AVISO */
+.topstrip{background:var(--gold);color:#fff;font-family:var(--display);font-weight:600;font-size:14px;text-align:center;padding:9px max(16px,env(safe-area-inset-right,0px)) 9px max(16px,env(safe-area-inset-left,0px))}
 
 /* HERO */
-.hero{background:var(--forest);color:#fff;position:relative;overflow:hidden;padding-block:56px 64px}
-.hero::before{content:"";position:absolute;width:560px;height:560px;border-radius:50%;background:var(--gold);right:-220px;top:-260px;opacity:.95}
-.hero .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:40px;align-items:center}
+.hero{background:var(--forest);color:#fff;position:relative;overflow:hidden;padding-block:60px 72px}
+.hero::before{content:"";position:absolute;width:600px;height:600px;border-radius:50%;background:var(--gold);right:-240px;top:-280px}
+.hero::after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:var(--green);left:-200px;bottom:-260px}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:44px;align-items:center}
 .hero .eyebrow{color:var(--gold-soft)}
-.hero h1{font-size:clamp(30px,5.2vw,54px);line-height:1.08;margin-top:14px}
-.hero h1 em{font-style:normal;color:var(--gold-soft)}
-.hero .lead{color:#DCE6DF;font-size:19px}
+.hero h1{font-size:clamp(40px,6.6vw,74px);line-height:1.02;font-weight:800;margin-top:16px;letter-spacing:-.02em}
+.hero h1 em{font-style:normal;color:var(--gold-soft);display:block}
+.hero .lead{color:#DCE6DF;font-size:clamp(17px,2vw,20px);margin-top:20px}
 .hero .lead b{color:#fff}
-.hero .cta{margin-top:28px}
-.hero-img{border-radius:22px;box-shadow:0 30px 60px rgba(0,0,0,.35)}
-.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
-.pills span{font-size:13.5px;padding:6px 13px;border-radius:999px;background:rgba(255,255,255,.1);color:#E6EDE8}
+.hero .cta{margin-top:30px}
+.byline{display:flex;align-items:center;gap:12px;margin-top:26px;padding-top:20px;border-top:1px solid rgba(255,255,255,.14);font-size:14.5px;color:#CFE0D5;line-height:1.4}
+.byline b{color:#fff;font-family:var(--display);font-weight:600}
+.mini-av{flex:none;width:46px;height:46px;border-radius:50%;background:var(--green);border:2px solid var(--gold);color:var(--gold-soft);font-family:var(--display);font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:center}
+.hero-img{border-radius:22px;box-shadow:0 30px 60px rgba(0,0,0,.4)}
+.inside{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.inside span{display:inline-flex;align-items:center;gap:7px;font-size:14px;padding:7px 13px;border-radius:999px;background:rgba(255,255,255,.1);color:#E6EDE8}
+.inside svg{width:16px;height:16px;color:var(--gold-soft)}
 
-/* SINAIS */
-.signs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:36px}
-.sign{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px 22px 20px;display:flex;flex-direction:column;gap:8px}
-.sign .who{font-family:var(--display);font-weight:600;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
-.sign p{font-size:17px;color:var(--ink)}
-.sign .sq{font-family:var(--display);font-weight:600;color:var(--green);font-size:17.5px}
-.punch{margin-top:34px;font-family:var(--display);font-weight:600;font-size:clamp(20px,2.8vw,26px);line-height:1.35;color:var(--green);border-left:4px solid var(--gold);padding-left:18px;max-width:46ch}
+/* PARA QUEM */
+.who-band{background:var(--cream);padding-block:44px}
+.who-t{font-family:var(--display);font-weight:700;color:var(--green);font-size:20px;text-align:center}
+.who{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:20px}
+.who div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;gap:10px;align-items:flex-start;font-size:15.5px;line-height:1.4}
+.who svg{width:22px;height:22px;flex:none;color:var(--green);margin-top:1px}
+
+/* RESULTADOS */
+.results{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:36px}
+.res{border:1px solid var(--line);border-radius:var(--r);padding:22px;background:#fff;display:flex;flex-direction:column;gap:10px}
+.res-ic{width:46px;height:46px;border-radius:12px;background:var(--ok);display:flex;align-items:center;justify-content:center;color:var(--green)}
+.res-ic svg{width:24px;height:24px}
+.res h3{font-size:18px;color:var(--green);line-height:1.3}
+.res p{font-size:15.5px;color:var(--muted);line-height:1.5}
+
+/* MECANISMO */
+.green-band{background:var(--green);color:#fff}
+.green-band .h2{color:#fff}
+.green-band .lead{color:#DCE6DF}
+.green-band .eyebrow{color:var(--gold-soft)}
+.mech{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:44px;align-items:start}
+.voice{font-size:18px;color:#E6EDE8;display:flex;flex-direction:column;gap:14px;margin-top:22px}
+.voice b{color:#fff}
+.domino{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:26px}
+.domino h3{font-size:18px;color:var(--gold-soft)}
+.domino ol{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:12px}
+.domino li{display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:start;font-size:16px;color:#E6EDE8;line-height:1.45}
+.domino li span{width:30px;height:30px;border-radius:50%;background:var(--gold);color:#fff;font-family:var(--display);font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}
+.domino p{margin-top:16px;font-size:15.5px;color:#fff;border-top:1px dashed rgba(255,255,255,.25);padding-top:14px}
+.pillars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:40px}
+.pillar{background:rgba(255,255,255,.07);border-radius:14px;padding:16px;display:flex;gap:12px;align-items:flex-start}
+.pillar svg{width:24px;height:24px;flex:none;color:var(--gold-soft)}
+.pillar b{font-family:var(--display);font-weight:600;color:#fff;display:block;font-size:15.5px;line-height:1.3}
+.pillar span{font-size:14px;color:#CFE0D5;line-height:1.45}
 
 /* QUIZ */
-.quiz-band{background:var(--cream)}
+.cream{background:var(--cream)}
 .quiz{display:grid;gap:14px;margin-top:32px}
 .q{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px 22px}
 .q-t{font-family:var(--display);font-weight:600;font-size:18px;color:var(--ink);line-height:1.35}
@@ -82,39 +122,26 @@ img{display:block;max-width:100%;height:auto}
 .q-a b{color:var(--green)}
 .q-score{margin-top:18px;font-family:var(--display);font-weight:600;color:var(--green);font-size:18px}
 
-/* PILARES */
-.pillars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:34px}
-.pillar{background:var(--cream);border-radius:14px;padding:18px;display:flex;gap:12px;align-items:flex-start}
-.pillar svg{width:26px;height:26px;flex:none;color:var(--green)}
-.pillar b{font-family:var(--display);font-weight:600;color:var(--green);display:block;font-size:16px;line-height:1.3}
-.pillar span{font-size:14.5px;color:var(--muted);line-height:1.45}
-
 /* ROTAS */
-.green-band{background:var(--green);color:#fff}
-.green-band .h2{color:#fff}
-.green-band .lead{color:#DCE6DF}
 .routes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:34px}
-.route{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:26px}
-.route h3{font-size:22px;color:var(--gold-soft);display:flex;align-items:center;gap:10px}
-.route h3 svg{width:28px;height:28px}
+.route{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px}
+.route h3{font-size:22px;color:var(--green);display:flex;align-items:center;gap:10px}
+.route h3 svg{width:28px;height:28px;color:var(--gold)}
 .route ul{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:10px}
-.route li{padding-left:24px;position:relative;font-size:16px;color:#E6EDE8}
+.route li{padding-left:24px;position:relative;font-size:16px}
 .route li::before{content:"";position:absolute;left:2px;top:.6em;width:9px;height:9px;border-radius:50%;background:var(--gold)}
-.route li b{color:#fff}
-
-/* SUMÁRIO */
-.parts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:34px}
-.part{border:1px solid var(--line);border-radius:20px;padding:24px;background:#fff}
+details.toc{margin-top:22px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:0 22px}
+details.toc[open]{padding-bottom:20px}
+.parts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
 .part-k{font-family:var(--display);font-weight:600;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
-.part h3{font-size:21px;color:var(--green);margin-top:4px}
-.part ol{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:7px;counter-reset:none}
-.part li{display:grid;grid-template-columns:30px 1fr;font-size:15.5px;line-height:1.4;color:var(--ink)}
+.part h3{font-size:18px;color:var(--green);margin-top:2px}
+.part ol{margin:10px 0 0;padding:0;list-style:none;display:grid;gap:6px}
+.part li{display:grid;grid-template-columns:28px 1fr;font-size:15px;line-height:1.4}
 .part li span{font-family:var(--display);font-weight:600;color:var(--gold);font-variant-numeric:tabular-nums}
 
 /* POR DENTRO */
-.peek-band{background:var(--cream)}
 .shots{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 4px 22px;margin-top:30px;-webkit-overflow-scrolling:touch}
-.shot{flex:0 0 220px;scroll-snap-align:start;display:flex;flex-direction:column;gap:10px}
+.shot{flex:0 0 220px;scroll-snap-align:start;display:flex;flex-direction:column;gap:10px;margin:0}
 .phone{background:#0B1A11;border-radius:30px;padding:9px;box-shadow:0 14px 30px rgba(18,48,31,.22)}
 .phone img{border-radius:22px;aspect-ratio:587/1041;width:100%;object-fit:cover}
 .shot figcaption{font-size:14px;color:var(--muted);text-align:center;line-height:1.35}
@@ -134,6 +161,13 @@ img{display:block;max-width:100%;height:auto}
 .sheetbox svg{width:28px;height:28px;flex:none;color:var(--green)}
 .sheetbox b{font-family:var(--display);color:var(--green)}
 
+/* SINAIS */
+.signs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:36px}
+.sign{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:8px}
+.sign .who-s{font-family:var(--display);font-weight:600;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.sign .sq{font-family:var(--display);font-weight:600;color:var(--green);font-size:17.5px}
+.punch{margin-top:34px;font-family:var(--display);font-weight:600;font-size:clamp(20px,2.8vw,26px);line-height:1.35;color:var(--green);border-left:4px solid var(--gold);padding-left:18px;max-width:46ch}
+
 /* ANTES / DEPOIS */
 .compare{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;margin-top:34px}
 .col{border-radius:20px;padding:24px}
@@ -150,7 +184,7 @@ img{display:block;max-width:100%;height:auto}
 .col.after li svg{color:var(--gold-soft)}
 
 /* AUTOR */
-.author{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:start;margin-top:30px}
+.author{display:grid;grid-template-columns:auto minmax(0,1fr);gap:28px;align-items:start;margin-top:30px}
 .avatar{width:112px;height:112px;border-radius:50%;background:var(--green);color:var(--gold-soft);font-family:var(--display);font-weight:700;font-size:38px;display:flex;align-items:center;justify-content:center;border:4px solid var(--gold)}
 .author h3{font-size:24px;color:var(--green)}
 .author .role{font-size:15px;color:var(--muted);margin-top:2px}
@@ -159,7 +193,9 @@ img{display:block;max-width:100%;height:auto}
 
 /* OFERTA */
 .offer-band{background:var(--forest);color:#fff}
-.offer{background:var(--paper);color:var(--ink);border-radius:26px;max-width:620px;margin:30px auto 0;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.35)}
+.offer-band .h2{color:#fff}
+.offer-band .eyebrow{color:var(--gold-soft)}
+.offer{background:var(--paper);color:var(--ink);border-radius:26px;max-width:640px;margin:30px auto 0;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.35)}
 .offer-top{background:var(--cream);padding:24px 28px;display:flex;gap:18px;align-items:center}
 .offer-top img{width:96px;border-radius:12px;flex:none}
 .offer-top h3{font-size:21px;color:var(--green);line-height:1.25}
@@ -168,13 +204,13 @@ img{display:block;max-width:100%;height:auto}
 .incl{list-style:none;padding:0;margin:0;display:grid;gap:12px}
 .incl li{display:grid;grid-template-columns:26px 1fr;gap:8px;font-size:16px;line-height:1.45}
 .incl svg{width:22px;height:22px;color:var(--green);margin-top:1px}
-.price{margin-top:24px;text-align:center}
-.price .val{font-family:var(--display);font-weight:700;font-size:58px;line-height:1;color:var(--green);font-variant-numeric:tabular-nums}
-.price .val small{font-size:24px;vertical-align:top;margin-right:4px;position:relative;top:10px}
-.price .sub{font-size:14.5px;color:var(--muted);margin-top:6px}
-.offer .btn{width:100%;margin-top:20px}
+.price{margin-top:26px;text-align:center}
+.price .val{font-family:var(--display);font-weight:800;font-size:64px;line-height:1;color:var(--green);font-variant-numeric:tabular-nums}
+.price .val small{font-size:24px;vertical-align:top;margin-right:4px;position:relative;top:12px}
+.price .sub{font-size:15px;color:var(--muted);margin-top:8px}
+.price .day{display:inline-block;margin-top:10px;font-size:14px;font-weight:600;color:var(--green);background:var(--ok);border-radius:999px;padding:6px 14px}
+.offer .btn{width:100%;margin-top:22px}
 .offer .trust{justify-content:center;color:var(--muted)}
-.offer-band .h2{color:#fff}
 
 .guarantee{display:flex;gap:22px;align-items:center;max-width:720px;margin:0 auto}
 .seal{flex:none;width:112px;height:112px;border-radius:50%;border:3px dashed var(--gold);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--green);font-family:var(--display);font-weight:700;line-height:1}
@@ -185,15 +221,15 @@ img{display:block;max-width:100%;height:auto}
 
 /* FAQ */
 .faq{margin-top:28px;display:grid;gap:10px}
-details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:0 20px}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:0 20px}
 summary{cursor:pointer;list-style:none;font-family:var(--display);font-weight:600;font-size:17px;color:var(--green);padding:18px 30px 18px 0;position:relative}
 summary::-webkit-details-marker{display:none}
 summary::after{content:"+";position:absolute;right:0;top:14px;font-size:24px;color:var(--gold);font-weight:500}
-details[open] summary::after{content:"–"}
-details p{padding:0 0 18px;color:var(--muted);font-size:16px}
+details[open]>summary::after{content:"–"}
+.faq details p{padding:0 0 18px;color:var(--muted);font-size:16px}
 
 .final{text-align:center}
-.final .h2{color:#fff}
+.final .h2{color:#fff;font-size:clamp(30px,5vw,48px)}
 .final .lead{margin-inline:auto;color:#DCE6DF}
 .final .trust{justify-content:center;color:#DCE6DF}
 footer{background:var(--forest);color:#9FB4A7;font-size:13.5px;line-height:1.55;padding-block:28px 34px;border-top:1px solid rgba(255,255,255,.08)}
@@ -204,26 +240,31 @@ footer b{color:#DCE6DF}
 .bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px}
 .bar-l{color:#fff;font-size:14px;line-height:1.3;min-width:0}
 .bar-l b{font-family:var(--display);font-size:20px;color:var(--gold-soft);display:block}
-.bar .btn{padding:13px 24px;font-size:16px;box-shadow:none;flex:none}
+.bar .btn{padding:13px 24px;font-size:16px;box-shadow:none}
 
+@media (max-width:900px){
+  .who{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .results{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
 @media (max-width:820px){
   .band{padding-block:56px}
-  .hero{padding-block:40px 48px}
-  .hero .wrap,.kit,.compare,.routes,.parts{grid-template-columns:minmax(0,1fr)}
+  .hero{padding-block:40px 52px}
+  .hero .wrap,.kit,.compare,.routes,.parts,.mech{grid-template-columns:minmax(0,1fr)}
   .hero::before{width:360px;height:360px;right:-170px;top:-190px}
-  .hero-img{max-width:440px;margin:0 auto}
+  .hero-img{max-width:420px;width:100%;margin:0 auto}
   .pillars{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .signs{grid-template-columns:1fr}
+  .signs{grid-template-columns:minmax(0,1fr)}
   .sheets{height:340px;max-width:440px;width:100%;margin:0 auto}
   .fichas{columns:1}
-  .author{grid-template-columns:1fr}
+  .author{grid-template-columns:minmax(0,1fr)}
   .guarantee{flex-direction:column;text-align:center}
 }
-@media (max-width:440px){
+@media (max-width:520px){
   body{font-size:16px}
-  .pillars{grid-template-columns:1fr}
+  .who,.results,.pillars{grid-template-columns:minmax(0,1fr)}
   .offer-top{flex-direction:column;align-items:flex-start}
-  .btn{padding:16px 22px;font-size:17px}
+  .btn{padding:17px 22px;font-size:17px;width:100%}
+  .bar .btn{width:auto}
   .bar-l span{display:none}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
@@ -252,77 +293,121 @@ footer b{color:#DCE6DF}
     <symbol id="i-cat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20v-8l-1-7 4 3h8l4-3-1 7v8z"/></symbol>
     <symbol id="i-clip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1M8.5 10h7M8.5 14h7M8.5 18h4"/></symbol>
     <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M3 15h18M9 4v16"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></symbol>
+    <symbol id="i-paw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="10" r="2"/><circle cx="10" cy="6" r="2"/><circle cx="14" cy="6" r="2"/><circle cx="18" cy="10" r="2"/><path d="M8 17c0-3 2-5 4-5s4 2 4 5c0 2-2 3-4 2-2 1-4 0-4-2z"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></symbol>
   </defs>
 </svg>
 
-<!-- HERO -->
+<div class="topstrip">Guia + 13 fichas + planilha · acesso imediato · garantia de 7 dias</div>
+
+<!-- 1. HERO -->
 <header class="band hero">
   <div class="wrap">
     <div>
-      <div class="eyebrow">Guia prático · cães e gatos</div>
-      <h1>Não existe ração, suplemento ou exame que, sozinho, faça seu pet <em>viver mais.</em></h1>
-      <p class="lead">Longevidade é peso, músculo, comida, movimento, boca, a dor que ninguém vê e as pequenas mudanças que viram "coisa da idade". <b>A Rota da Longevidade</b> mostra o que fazer na rotina de hoje para seu cão ou gato viver mais e envelhecer bem.</p>
-      <div class="pills"><span>Guia para celular</span><span>13 fichas para imprimir</span><span>Planilha com alertas</span></div>
-      <div class="cta"><a class="btn js-checkout" href="https://pay.kiwify.com.br/ks8Q0Sn">Quero a Rota da Longevidade <svg><use href="#i-arrow"/></svg></a></div>
+      <div class="eyebrow">A Rota da Longevidade · cães e gatos</div>
+      <h1>Mais anos com seu pet. <em>E anos bem vividos.</em></h1>
+      <p class="lead">Não existe ração, suplemento ou exame que, sozinho, faça seu cão ou gato viver mais. <b>Existe uma rota, e ela começa na rotina de hoje:</b> peso, músculo, comida, movimento, boca e a dor que ninguém vê.</p>
+      <div class="inside">
+        <span><svg><use href="#i-phone"/></svg>Guia ilustrado para celular</span>
+        <span><svg><use href="#i-clip"/></svg>13 fichas para imprimir</span>
+        <span><svg><use href="#i-grid"/></svg>Planilha com alertas</span>
+      </div>
+      <div class="cta"><a class="btn js-checkout" href="https://pay.kiwify.com.br/ks8Q0Sn">Quero começar a rota agora <svg><use href="#i-arrow"/></svg></a></div>
       <div class="trust">
         <span><svg><use href="#i-bolt"/></svg>Acesso imediato</span>
         <span><svg><use href="#i-shield"/></svg>Garantia de 7 dias</span>
-        <span><svg><use href="#i-phone"/></svg>Feito para ler no celular</span>
+        <span><svg><use href="#i-paw"/></svg>Para cães e gatos de qualquer idade</span>
       </div>
+      <div class="byline"><div class="mini-av" aria-hidden="true">VM</div><div>Criado por <b>Dr. Vinicius Monay</b><br>Médico Veterinário e Zootecnista · CRMV-SP 54.563</div></div>
     </div>
     <img class="hero-img" src="img/produto.webp" width="1200" height="1200" alt="A Rota da Longevidade para Cães e Gatos: guia no celular e fichas impressas">
   </div>
 </header>
 
-<!-- SINAIS -->
-<section class="band">
+<!-- 2. PARA QUEM -->
+<section class="band who-band">
   <div class="wrap">
-    <div class="eyebrow">Pode estar acontecendo na sua casa</div>
-    <h2 class="h2">Os grandes problemas começam pequenos</h2>
-    <p class="lead">A gente convive todo dia, se adapta junto e nem percebe. Até que alguém pergunta há quanto tempo ele está assim.</p>
-    <div class="signs">
-      <div class="sign"><span class="who">Cão, 9 anos</span><p>Antes pulava no sofá. Agora espera no chão até alguém pegar no colo.</p><span class="sq">Preguiça ou dor?</span></div>
-      <div class="sign"><span class="who">Gato, 11 anos</span><p>Continua comendo bem, mas a balança mostra meio quilo a menos que no ano passado.</p><span class="sq">É só meio quilo ou 10% do peso dele?</span></div>
-      <div class="sign"><span class="who">Cão, 6 anos</span><p>O peso é o mesmo de sempre, mas as pernas de trás parecem mais finas.</p><span class="sq">Se a balança não mudou, está tudo bem?</span></div>
-      <div class="sign"><span class="who">Gato, 8 anos</span><p>Os torrões de xixi na caixa de areia estão maiores e ele visita mais o pote de água.</p><span class="sq">Calor ou sinal de alerta?</span></div>
+    <p class="who-t">Este guia é para você que tem</p>
+    <div class="who">
+      <div><svg><use href="#i-check"/></svg><span>Um <b>filhote</b> e quer começar certo desde já</span></div>
+      <div><svg><use href="#i-check"/></svg><span>Um <b>adulto saudável</b> e quer que continue assim</span></div>
+      <div><svg><use href="#i-check"/></svg><span>Um pet <b>maduro ou idoso</b> e quer dar mais qualidade de vida</span></div>
+      <div><svg><use href="#i-check"/></svg><span>Um <b>cão, um gato ou os dois</b> em casa</span></div>
     </div>
-    <p class="punch">"Ele está ficando velho" encerra a conversa cedo demais. Quase sempre existe algo a investigar, ajustar ou facilitar.</p>
   </div>
 </section>
 
-<!-- QUIZ -->
-<section class="band quiz-band" aria-labelledby="quiz-h">
+<!-- 3. RESULTADOS -->
+<section class="band">
+  <div class="wrap">
+    <div class="center">
+      <div class="eyebrow">O que muda depois da leitura</div>
+      <h2 class="h2">Em poucas noites, você passa a enxergar seu pet com olhos de veterinário</h2>
+      <p class="lead">Sem termos difíceis e sem precisar de nada caro. Só o que realmente pesa na saúde dele ao longo dos anos.</p>
+    </div>
+    <div class="results">
+      <div class="res"><div class="res-ic"><svg><use href="#i-scale"/></svg></div><h3>Saber se o peso está certo</h3><p>Olhando e tocando o corpo dele, sem depender só da balança.</p></div>
+      <div class="res"><div class="res-ic"><svg><use href="#i-muscle"/></svg></div><h3>Perceber a perda de músculo cedo</h3><p>Antes de ela virar dificuldade para levantar, subir e brincar.</p></div>
+      <div class="res"><div class="res-ic"><svg><use href="#i-search"/></svg></div><h3>Entender o que está no pote</h3><p>Ler o verso da embalagem e descobrir quanto ele come de verdade, petiscos incluídos.</p></div>
+      <div class="res"><div class="res-ic"><svg><use href="#i-heart"/></svg></div><h3>Reconhecer a dor que parece preguiça</h3><p>Os sinais discretos que costumam passar anos como "coisa da idade".</p></div>
+      <div class="res"><div class="res-ic"><svg><use href="#i-home"/></svg></div><h3>Adaptar a casa sem gastar muito</h3><p>Pequenas mudanças que devolvem autonomia e conforto ao seu pet.</p></div>
+      <div class="res"><div class="res-ic"><svg><use href="#i-stetho"/></svg></div><h3>Chegar à consulta preparado</h3><p>Com registros, perguntas certas e o que pedir em cada fase da vida.</p></div>
+    </div>
+    <div class="midcta"><a class="btn js-checkout" href="https://pay.kiwify.com.br/ks8Q0Sn">Quero a Rota da Longevidade <svg><use href="#i-arrow"/></svg></a><small>R$ 37 · pagamento único · acesso para sempre</small></div>
+  </div>
+</section>
+
+<!-- 4. MECANISMO -->
+<section class="band green-band">
+  <div class="wrap">
+    <div class="mech">
+      <div>
+        <div class="eyebrow">Por que uma coisa só não resolve</div>
+        <h2 class="h2">Seu pet não vai viver mais por causa de uma ração. Vai viver mais por causa de uma rotina.</h2>
+        <div class="voice">
+          <p>Eu trabalho com nutrição animal desde 2016. E a alimentação importa muito. Mas o que eu mais vejo no atendimento é o tutor que acertou o pote e, mesmo assim, viu o pet envelhecer mal.</p>
+          <p>Porque a saúde ao longo dos anos não mora num fator só. <b>Ela mora no conjunto, e um pilar puxa o outro.</b></p>
+        </div>
+      </div>
+      <div class="domino">
+        <h3>Um exemplo que eu vejo toda semana</h3>
+        <ol>
+          <li><span>1</span>O cão começa a sentir dor nas articulações e anda menos.</li>
+          <li><span>2</span>Continua comendo a mesma quantidade.</li>
+          <li><span>3</span>Ganha gordura e perde músculo.</li>
+          <li><span>4</span>Levantar fica ainda mais difícil, e o ciclo se repete.</li>
+        </ol>
+        <p>Trocar a ração resolveria só uma parte. O guia ensina a olhar o conjunto.</p>
+      </div>
+    </div>
+    <div class="pillars">
+      <div class="pillar"><svg><use href="#i-scale"/></svg><div><b>Condição corporal</b><span>Gordura avaliada além da balança</span></div></div>
+      <div class="pillar"><svg><use href="#i-muscle"/></svg><div><b>Massa muscular</b><span>Força, equilíbrio e autonomia</span></div></div>
+      <div class="pillar"><svg><use href="#i-bowl"/></svg><div><b>Alimentação e água</b><span>O que ele come de verdade, e quanto</span></div></div>
+      <div class="pillar"><svg><use href="#i-walk"/></svg><div><b>Movimento</b><span>O passeio que cabe no corpo dele</span></div></div>
+      <div class="pillar"><svg><use href="#i-heart"/></svg><div><b>Controle da dor</b><span>Os sinais que ninguém percebe</span></div></div>
+      <div class="pillar"><svg><use href="#i-tooth"/></svg><div><b>Saúde oral</b><span>Comer bem não descarta dor na boca</span></div></div>
+      <div class="pillar"><svg><use href="#i-stetho"/></svg><div><b>Prevenção</b><span>O que acompanhar em cada fase</span></div></div>
+      <div class="pillar"><svg><use href="#i-brain"/></svg><div><b>Mente</b><span>Estímulo e saúde do cérebro</span></div></div>
+      <div class="pillar"><svg><use href="#i-home"/></svg><div><b>Ambiente</b><span>Uma casa que facilita a vida dele</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. QUIZ -->
+<section class="band cream" aria-labelledby="quiz-h">
   <div class="wrap narrow">
     <div class="eyebrow">Teste de 1 minuto</div>
-    <h2 class="h2" id="quiz-h">Mito ou verdade?</h2>
-    <p class="lead">Cinco crenças que aparecem toda semana no consultório. Toque na sua resposta.</p>
+    <h2 class="h2" id="quiz-h">Você acertaria estas 5?</h2>
+    <p class="lead">Cinco crenças que eu escuto toda semana no consultório. Mito ou verdade? Toque na sua resposta.</p>
     <div class="quiz" id="quiz"></div>
     <p class="q-score" id="q-score" hidden></p>
   </div>
 </section>
 
-<!-- PILARES -->
+<!-- 6. ROTAS + SUMÁRIO -->
 <section class="band">
-  <div class="wrap">
-    <div class="eyebrow">O que o guia cobre</div>
-    <h2 class="h2">Os 9 pilares da longevidade</h2>
-    <p class="lead">A alimentação importa muito, e ela faz parte de um conjunto. Um animal pode comer bem e continuar com dor, estar no peso e perder músculo. O guia mostra como cada pilar puxa o outro.</p>
-    <div class="pillars">
-      <div class="pillar"><svg><use href="#i-scale"/></svg><div><b>Condição corporal</b><span>Como avaliar gordura em casa, além da balança</span></div></div>
-      <div class="pillar"><svg><use href="#i-muscle"/></svg><div><b>Massa muscular</b><span>Onde tocar no carinho para perceber perda cedo</span></div></div>
-      <div class="pillar"><svg><use href="#i-bowl"/></svg><div><b>Alimentação e água</b><span>Rótulo, quantidade certa e a regra dos petiscos</span></div></div>
-      <div class="pillar"><svg><use href="#i-walk"/></svg><div><b>Movimento</b><span>Passeio que cabe no corpo dele e farejamento</span></div></div>
-      <div class="pillar"><svg><use href="#i-heart"/></svg><div><b>Controle da dor</b><span>Os sinais discretos que viram "coisa da idade"</span></div></div>
-      <div class="pillar"><svg><use href="#i-tooth"/></svg><div><b>Saúde oral</b><span>Por que comer bem não descarta dor na boca</span></div></div>
-      <div class="pillar"><svg><use href="#i-stetho"/></svg><div><b>Prevenção</b><span>Consultas e exames que fazem sentido em cada fase</span></div></div>
-      <div class="pillar"><svg><use href="#i-brain"/></svg><div><b>Mente</b><span>Estímulo mental e saúde do cérebro que envelhece</span></div></div>
-      <div class="pillar"><svg><use href="#i-home"/></svg><div><b>Ambiente</b><span>Uma casa que facilita em vez de limitar</span></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ROTAS -->
-<section class="band green-band">
   <div class="wrap">
     <div class="eyebrow">Uma rota para cada espécie</div>
     <h2 class="h2">Cão não é gato pequeno. E gato não é cão que mia.</h2>
@@ -349,34 +434,28 @@ footer b{color:#DCE6DF}
         </ul>
       </div>
     </div>
+    <details class="toc">
+      <summary>Ver o sumário completo: 4 partes e 22 capítulos</summary>
+      <div class="parts">
+        <div class="part"><div class="part-k">Parte 1</div><h3>Antes de começar a rota</h3>
+          <ol><li><span>1</span>Viver mais não é o mesmo que envelhecer bem</li><li><span>2</span>Quanto tempo cães e gatos realmente vivem?</li><li><span>3</span>Genética e ambiente: o que dá e o que não dá para mudar</li><li><span>4</span>Os 9 pilares da longevidade</li><li><span>5</span>A longevidade começa antes da velhice</li></ol></div>
+        <div class="part"><div class="part-k">Parte 2</div><h3>A rota dos cães</h3>
+          <ol><li><span>6</span>O corpo do cão ao longo da vida</li><li><span>7</span>Alimentação e longevidade canina</li><li><span>8</span>Movimento, músculos e autonomia</li><li><span>9</span>Dor, boca e doenças silenciosas</li><li><span>10</span>Comportamento e saúde do cérebro</li><li><span>11</span>O que pode estar roubando anos do seu cão</li><li><span>12</span>Como cuidar em cada fase da vida</li></ol></div>
+        <div class="part"><div class="part-k">Parte 3</div><h3>A rota dos gatos</h3>
+          <ol><li><span>13</span>O corpo do gato ao longo da vida</li><li><span>14</span>Alimentação e longevidade felina</li><li><span>15</span>Água, rins e caixa de areia</li><li><span>16</span>Uma casa que ajuda o gato a viver bem</li><li><span>17</span>Dor, boca e doenças discretas</li><li><span>18</span>O que pode estar roubando saúde do seu gato</li><li><span>19</span>Como cuidar em cada fase da vida</li></ol></div>
+        <div class="part"><div class="part-k">Parte 4</div><h3>Seu mapa da longevidade</h3>
+          <ol><li><span>20</span>Onde seu animal está hoje?</li><li><span>21</span>Transforme observações em um plano</li><li><span>22</span>Leve um retrato da rotina para a consulta</li></ol></div>
+      </div>
+    </details>
   </div>
 </section>
 
-<!-- SUMÁRIO -->
-<section class="band">
-  <div class="wrap">
-    <div class="eyebrow">Conteúdo completo</div>
-    <h2 class="h2">4 partes, 22 capítulos, leitura no seu ritmo</h2>
-    <p class="lead">Não precisa ler tudo de uma vez nem seguir a ordem. O sumário é clicável e leva direto à rota do seu pet.</p>
-    <div class="parts">
-      <div class="part"><div class="part-k">Parte 1</div><h3>Antes de começar a rota</h3>
-        <ol><li><span>1</span>Viver mais não é o mesmo que envelhecer bem</li><li><span>2</span>Quanto tempo cães e gatos realmente vivem?</li><li><span>3</span>Genética e ambiente: o que dá e o que não dá para mudar</li><li><span>4</span>Os 9 pilares da longevidade</li><li><span>5</span>A longevidade começa antes da velhice</li></ol></div>
-      <div class="part"><div class="part-k">Parte 2</div><h3>A rota dos cães</h3>
-        <ol><li><span>6</span>O corpo do cão ao longo da vida</li><li><span>7</span>Alimentação e longevidade canina</li><li><span>8</span>Movimento, músculos e autonomia</li><li><span>9</span>Dor, boca e doenças silenciosas</li><li><span>10</span>Comportamento e saúde do cérebro</li><li><span>11</span>O que pode estar roubando anos do seu cão</li><li><span>12</span>Como cuidar em cada fase da vida</li></ol></div>
-      <div class="part"><div class="part-k">Parte 3</div><h3>A rota dos gatos</h3>
-        <ol><li><span>13</span>O corpo do gato ao longo da vida</li><li><span>14</span>Alimentação e longevidade felina</li><li><span>15</span>Água, rins e caixa de areia</li><li><span>16</span>Uma casa que ajuda o gato a viver bem</li><li><span>17</span>Dor, boca e doenças discretas</li><li><span>18</span>O que pode estar roubando saúde do seu gato</li><li><span>19</span>Como cuidar em cada fase da vida</li></ol></div>
-      <div class="part"><div class="part-k">Parte 4</div><h3>Seu mapa da longevidade</h3>
-        <ol><li><span>20</span>Onde seu animal está hoje?</li><li><span>21</span>Transforme observações em um plano</li><li><span>22</span>Leve um retrato da rotina para a consulta</li></ol></div>
-    </div>
-  </div>
-</section>
-
-<!-- POR DENTRO -->
-<section class="band peek-band">
+<!-- 7. POR DENTRO -->
+<section class="band cream">
   <div class="wrap">
     <div class="eyebrow">Veja por dentro</div>
     <h2 class="h2">Feito para ler no celular, com ilustrações e caixas que vão direto ao ponto</h2>
-    <div class="shots" tabindex="0" aria-label="Páginas do guia">
+    <div class="shots" tabindex="0" aria-label="Telas do guia">
       <figure class="shot"><div class="phone"><img src="img/g1.webp" width="587" height="1041" alt="Capa do guia"></div><figcaption>Capa</figcaption></figure>
       <figure class="shot"><div class="phone"><img src="img/g5.webp" width="587" height="1041" alt="Tela Escolha sua rota"></div><figcaption>Escolha a rota do seu pet</figcaption></figure>
       <figure class="shot"><div class="phone"><img src="img/g28.webp" width="587" height="1041" alt="Os 9 pilares da longevidade"></div><figcaption>Os 9 pilares</figcaption></figure>
@@ -391,7 +470,7 @@ footer b{color:#DCE6DF}
   </div>
 </section>
 
-<!-- KIT -->
+<!-- 8. KIT -->
 <section class="band">
   <div class="wrap">
     <div class="eyebrow">Incluso no kit</div>
@@ -413,8 +492,24 @@ footer b{color:#DCE6DF}
   </div>
 </section>
 
-<!-- ANTES / DEPOIS -->
-<section class="band quiz-band">
+<!-- 9. SINAIS (mais abaixo) -->
+<section class="band cream">
+  <div class="wrap">
+    <div class="eyebrow">Por que começar hoje</div>
+    <h2 class="h2">Os sinais aparecem cedo. Quase sempre parecem "coisa da idade".</h2>
+    <p class="lead">A gente convive todo dia, se adapta junto e nem percebe. Até que alguém pergunta há quanto tempo ele está assim.</p>
+    <div class="signs">
+      <div class="sign"><span class="who-s">Cão, 9 anos</span><p>Antes pulava no sofá. Agora espera no chão até alguém pegar no colo.</p><span class="sq">Preguiça ou dor?</span></div>
+      <div class="sign"><span class="who-s">Gato, 11 anos</span><p>Continua comendo bem, mas a balança mostra meio quilo a menos que no ano passado.</p><span class="sq">É só meio quilo ou 10% do peso dele?</span></div>
+      <div class="sign"><span class="who-s">Cão, 6 anos</span><p>O peso é o mesmo de sempre, mas as pernas de trás parecem mais finas.</p><span class="sq">Se a balança não mudou, está tudo bem?</span></div>
+      <div class="sign"><span class="who-s">Gato, 8 anos</span><p>Os torrões de xixi na caixa de areia estão maiores e ele visita mais o pote de água.</p><span class="sq">Calor ou sinal de alerta?</span></div>
+    </div>
+    <p class="punch">"Ele está ficando velho" encerra a conversa cedo demais. Quase sempre existe algo a investigar, ajustar ou facilitar.</p>
+  </div>
+</section>
+
+<!-- 10. ANTES / DEPOIS -->
+<section class="band">
   <div class="wrap">
     <div class="eyebrow">O que muda</div>
     <h2 class="h2">Do "acho que ele está bem" para "eu sei como ele está"</h2>
@@ -435,8 +530,8 @@ footer b{color:#DCE6DF}
   </div>
 </section>
 
-<!-- AUTOR -->
-<section class="band">
+<!-- 11. AUTOR -->
+<section class="band cream">
   <div class="wrap narrow">
     <div class="eyebrow">Quem escreveu</div>
     <div class="author">
@@ -452,11 +547,13 @@ footer b{color:#DCE6DF}
   </div>
 </section>
 
-<!-- OFERTA -->
+<!-- 12. OFERTA -->
 <section class="band offer-band" id="oferta">
   <div class="wrap">
-    <div class="eyebrow" style="text-align:center;color:var(--gold-soft)">Acesso imediato</div>
-    <h2 class="h2" style="text-align:center">Tudo o que você recebe</h2>
+    <div class="center">
+      <div class="eyebrow">Acesso imediato</div>
+      <h2 class="h2">Comece a rota do seu pet hoje</h2>
+    </div>
     <div class="offer">
       <div class="offer-top">
         <img src="img/produto.webp" width="1200" height="1200" alt="">
@@ -464,16 +561,18 @@ footer b{color:#DCE6DF}
       </div>
       <div class="offer-body">
         <ul class="incl">
-          <li><svg><use href="#i-check"/></svg><span><b>Guia ilustrado para celular:</b> mais de 120 telas, 22 capítulos e sumário clicável, com rota para cães e para gatos</span></li>
+          <li><svg><use href="#i-check"/></svg><span><b>Guia ilustrado para celular:</b> mais de 120 telas, 22 capítulos e sumário clicável, com uma rota para cães e outra para gatos</span></li>
           <li><svg><use href="#i-check"/></svg><span><b>Kit de Ferramentas:</b> 13 fichas em PDF para imprimir e levar à consulta</span></li>
           <li><svg><use href="#i-check"/></svg><span><b>Planilha inteligente</b> para Excel e Google Sheets, com alertas automáticos</span></li>
           <li><svg><use href="#i-check"/></svg><span>Baseado nas <b>diretrizes internacionais mais recentes</b> de cuidado de cães e gatos, em linguagem de tutor</span></li>
+          <li><svg><use href="#i-check"/></svg><span><b>Serve para todos os pets da casa</b>: imprima as fichas quantas vezes quiser</span></li>
         </ul>
         <div class="price">
           <div class="val"><small>R$</small>37</div>
           <div class="sub">Pagamento único. Acesso para sempre.</div>
+          <div class="day">Menos de 10 centavos por dia durante um ano</div>
         </div>
-        <a class="btn js-checkout" href="https://pay.kiwify.com.br/ks8Q0Sn">Quero a Rota da Longevidade <svg><use href="#i-arrow"/></svg></a>
+        <a class="btn js-checkout" href="https://pay.kiwify.com.br/ks8Q0Sn">Quero começar a rota agora <svg><use href="#i-arrow"/></svg></a>
         <div class="trust">
           <span><svg><use href="#i-bolt"/></svg>Acesso imediato por e-mail</span>
           <span><svg><use href="#i-shield"/></svg>Pagamento seguro pela Kiwify</span>
@@ -483,16 +582,16 @@ footer b{color:#DCE6DF}
   </div>
 </section>
 
-<!-- GARANTIA -->
+<!-- 13. GARANTIA -->
 <section class="band">
   <div class="guarantee">
     <div class="seal" aria-hidden="true"><b>7</b><span>DIAS</span></div>
-    <div><h3>Garantia incondicional de 7 dias</h3><p>Leia o guia, use as fichas e, se não fizer sentido para você, peça o reembolso pela Kiwify em até 7 dias. Sem precisar explicar o motivo.</p></div>
+    <div><h3>O risco é todo meu</h3><p>Leia o guia, use as fichas e, se não fizer sentido para você e para o seu pet, peça o reembolso pela Kiwify em até 7 dias. Sem precisar explicar o motivo.</p></div>
   </div>
 </section>
 
-<!-- FAQ -->
-<section class="band quiz-band">
+<!-- 14. FAQ -->
+<section class="band cream">
   <div class="wrap narrow">
     <div class="eyebrow">Perguntas frequentes</div>
     <h2 class="h2">Ficou alguma dúvida?</h2>
@@ -503,18 +602,17 @@ footer b{color:#DCE6DF}
       <details><summary>Tem receitas ou doses de suplemento?</summary><p>Não, de propósito. Alimentação e suplementação precisam ser individualizadas. O guia ensina a avaliar o que seu pet come, ler rótulos e fazer as perguntas certas, sem receitas prontas nem doses.</p></details>
       <details><summary>O guia substitui o veterinário?</summary><p>Não. Ele ajuda você a perceber mudanças cedo, organizar os registros e aproveitar melhor cada consulta.</p></details>
       <details><summary>Como eu recebo?</summary><p>O pagamento é processado pela Kiwify. Assim que for confirmado, você recebe por e-mail o acesso ao guia para celular, ao kit de fichas e à planilha.</p></details>
-      <details><summary>Tenho mais de um pet. Serve?</summary><p>Serve. O conteúdo vale para todos e as fichas podem ser impressas quantas vezes você precisar.</p></details>
       <details><summary>E se eu não gostar?</summary><p>Você tem 7 dias de garantia. Peça o reembolso direto pela Kiwify, sem precisar explicar o motivo.</p></details>
     </div>
   </div>
 </section>
 
-<!-- FINAL -->
+<!-- 15. FECHAMENTO -->
 <section class="band offer-band final">
   <div class="wrap narrow">
-    <h2 class="h2">Os próximos anos do seu pet começam na rotina de hoje.</h2>
-    <p class="lead">Você não precisa mudar tudo de uma vez. Precisa saber por onde começar.</p>
-    <div style="margin-top:26px"><a class="btn js-checkout" href="https://pay.kiwify.com.br/ks8Q0Sn">Quero começar a rota <svg><use href="#i-arrow"/></svg></a></div>
+    <h2 class="h2">Daqui a alguns anos, você vai querer ter começado hoje.</h2>
+    <p class="lead">Você não precisa mudar tudo de uma vez. Precisa saber por onde começar. A rota está pronta.</p>
+    <div style="margin-top:28px"><a class="btn js-checkout" href="https://pay.kiwify.com.br/ks8Q0Sn">Quero começar a rota agora <svg><use href="#i-arrow"/></svg></a></div>
     <div class="trust"><span><svg><use href="#i-bolt"/></svg>Acesso imediato</span><span><svg><use href="#i-shield"/></svg>Garantia de 7 dias</span><span><svg><use href="#i-phone"/></svg>Feito para ler no celular</span></div>
   </div>
 </section>
@@ -538,11 +636,10 @@ footer b{color:#DCE6DF}
 var CHECKOUT = 'https://pay.kiwify.com.br/ks8Q0Sn';
 (function () {
   var qs = location.search || '';
-  if (qs) {
-    var url = CHECKOUT + (CHECKOUT.indexOf('?') > -1 ? '&' + qs.slice(1) : qs);
-    document.querySelectorAll('.js-checkout').forEach(function (a) { a.href = url; });
-  }
-  document.querySelectorAll('.js-checkout').forEach(function (a) { a.target = '_blank'; a.rel = 'noopener'; });
+  document.querySelectorAll('.js-checkout').forEach(function (a) {
+    if (qs) a.href = CHECKOUT + (CHECKOUT.indexOf('?') > -1 ? '&' + qs.slice(1) : qs);
+    a.target = '_blank'; a.rel = 'noopener';
+  });
 
   var Q = [
     ['Cão idoso precisa comer menos proteína.', false, 'Preservar músculo continua sendo prioridade na velhice. Restringir nutrientes depende da condição clínica, não da idade.'],
